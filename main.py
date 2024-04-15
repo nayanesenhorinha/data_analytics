@@ -68,3 +68,19 @@ class Questionario:
         self.num_linhas +=1
         return True
     
+    # Função chamada para adicionar uma linha ao csv
+    def escrever_csv(self):
+        if os.path.exists(self.nome_arquivo):
+            df = pd.read_csv(self.nome_arquivo)
+            new_df = pd.DataFrame(self.respostas)
+            # Verifica se há respostas duplicadas antes de adicionar
+            df = pd.concat([df, new_df], ignore_index=True).drop_duplicates()
+        else:
+            df = pd.DataFrame(self.respostas)
+        df.to_csv(self.nome_arquivo, index=False)
+    # Função chamada pelo exibir o arquivo csv no console
+    def exibir_resultados(self):
+        df = pd.DataFrame(self.respostas)
+        print("\nResultados do Questionário: \n")
+        print(df)
+        print(f'Numero de linhas: {self.num_linhas}')
