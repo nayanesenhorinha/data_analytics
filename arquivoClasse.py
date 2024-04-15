@@ -10,10 +10,11 @@ class Questionario:
         self.backup = []
         self.linha_backup = []
         self.perguntas = [
-            "\nPergunta 1? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
-            "\nPergunta 2? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
-            "\nPergunta 3? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
-            "\nPergunta 4? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: "
+            "\nVocê utiliza IA para pesquisas? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
+            "\nVocê acredita que a IA pode substituir alguma tarefa que você realiza no dia a dia? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
+            "\nA IA já te ajudou em alguma situação importante? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
+            "\nVocê se sentiria seguro com a IA atuando na área da saúde ou de segurança? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: ",
+            "\nVocê acredita que num futuro próximo a IA substituirá os humanos em alguns postos de trabalho? \n(1) Sim \n(2) Não \n(3) Não sei \nEscolha uma opção: "
         ]
         # Verifica se o aquivo questionario.csv existe
         if os.path.exists(nome_arquivo):
@@ -22,7 +23,7 @@ class Questionario:
             self.num_linhas = len(self.respostas)
         else:
             # Se não existe ele cria
-            self.respostas = pd.DataFrame(columns=['ID', 'Idade', 'Gênero', 'Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4', 'Data/Hora'])
+            self.respostas = pd.DataFrame(columns=['ID', 'Idade', 'Gênero', 'Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4', 'Resposta 5', 'Data/Hora'])
             self.num_linhas = 0
     # Função que salva a linha no arquivo backup
     def salva_backup(self):

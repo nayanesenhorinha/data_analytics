@@ -5,7 +5,7 @@ def main():
     questionario = module.Questionario()
     
     while True:
-        opcao = input("\n------- MENU -------\n1) Fazer pesquisa\n2) Mostrar tabela\n3) Remover resposta\n0) Encerrar\nEscolha uma opção: ")
+        opcao = input("\nOperações:\n\n1) Fazer pesquisa\n2) Mostrar tabela\n3) Remover resposta\n0) Encerrar\n\nEscolha uma opção: ")
         if opcao == '1':
             questionario.coletar_informacoes()
             questionario.escrever_csv()
