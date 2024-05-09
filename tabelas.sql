@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS escola.Pessoa (
 
 CREATE TABLE IF NOT EXISTS escola.Estudante (
     ID_Estudante SERIAL PRIMARY KEY,
-    NumeroMatricula INT,
+    NumeroMatricula INT UNIQUE,
     DataMatricula DATE,
     Status BOOLEAN,
     ID_Pessoa INT,
