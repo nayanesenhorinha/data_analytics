@@ -1,5 +1,6 @@
--- Procedure para adicionar estudantes
-CREATE OR REPLACE PROCEDURE adicionar_estudante(
+-- PROCEDURE PARA ADICIONAR ESTUDANTES
+
+CREATE OR REPLACE PROCEDURE escola.adicionar_estudante(
     IN nome VARCHAR(100),
     IN sobrenome VARCHAR(100),
     IN email VARCHAR(100),
@@ -17,18 +18,15 @@ BEGIN
     DECLARE endereco_id INT;
     DECLARE pessoa_id INT;
 
-    -- Adicionar endereço
-    INSERT INTO Endereco (rua, cep, cidade, bairro, pais)
+    INSERT INTO escola.Endereco (rua, cep, cidade, bairro, pais)
     VALUES (rua, cep, cidade, bairro, pais);
     SET endereco_id = LAST_INSERT_ID();
 
-    -- Adicionar pessoa
-    INSERT INTO Pessoa (Endereco_id, nome, sobrenome, email, telefone, data_nasc, genero)
+    INSERT INTO escola.Pessoa (Endereco_id, nome, sobrenome, email, telefone, data_nasc, genero)
     VALUES (endereco_id, nome, sobrenome, email, telefone, data_nasc, genero);
     SET pessoa_id = LAST_INSERT_ID();
 
-    -- Adicionar estudante
-    INSERT INTO Estudantes (Pessoa_id, data_matricula, status)
+    INSERT INTO escola.Estudantes (Pessoa_id, data_matricula, status)
     VALUES (pessoa_id, CURDATE(), 1); -- 1 para status ativo
 
     SET id_estudante = LAST_INSERT_ID();
@@ -36,7 +34,7 @@ END;
 
 
 -- Procedure para adicionar facilitadores
-CREATE OR REPLACE PROCEDURE adicionar_facilitador(
+CREATE OR REPLACE PROCEDURE escola.adicionar_facilitador(
     IN nome VARCHAR(100),
     IN sobrenome VARCHAR(100),
     IN email VARCHAR(100),
@@ -55,7 +53,7 @@ BEGIN
     DECLARE pessoa_id INT;
 
     -- Adicionar endereço
-    INSERT INTO Endereco (rua, cep, cidade, bairro, pais)
+    INSERT INTO escola.Endereco (rua, cep, cidade, bairro, pais)
     VALUES (rua, cep, cidade, bairro, pais);
     SET endereco_id = LAST_INSERT_ID();
 
@@ -73,7 +71,7 @@ END;
 
 
 -- Procedure para editar informações de estudante cadastrado
-CREATE OR REPLACE PROCEDURE editar_estudante(
+CREATE OR REPLACE PROCEDURE escola.editar_estudante(
     IN id_estudante INT,
     IN nome VARCHAR(100),
     IN sobrenome VARCHAR(100),
@@ -118,4 +116,3 @@ END;
 CALL adicionar_estudante('João', 'Silva', 'joao@example.com', '123456789', '2000-01-01', 'Masculino', 'Rua A', '12345-678', 'Cidade', 'Bairro', 'País', @id_estudante);
 CALL adicionar_facilitador('Maria', 'Santos', 'maria@example.com', '987654321', '1980-05-15', 'Feminino', 'Matemática', 'Manhã', 'Local X', '2024-01-01', 2500.00, @id_facilitador);
 CALL editar_estudante(id_estudante, 'Novo Nome', 'Novo Sobrenome', 'novoemail@example.com', '987654321', '1999-12-31', 'Feminino', 'Nova Rua', '98765-432', 'Nova Cidade', 'Novo Bairro', 'Novo País');
-
