@@ -13,7 +13,6 @@ O curso abrange uma ampla gama de tópicos, incluindo, mas não se limitando a:
 - Visualização de Dados com Matplotlib e Seaborn
 - Análise Exploratória de Dados
 - Técnicas de Machine Learning
-- Projeto Final de Análise de Dados
 
 ## Objetivo
 O objetivo deste repositório é servir como um registro de aprendizado e prática dos conceitos ensinados no curso. Ele também pode ser usado como referência para revisitar técnicas e métodos de análise de dados.
