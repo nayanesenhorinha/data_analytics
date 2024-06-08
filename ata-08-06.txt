@@ -1,0 +1,13 @@
+Perguntas pra levar pro Felipe:
+- como fazer a união dos dados para o banco
+
+
+- fazer divisão das tarefas:
+	- gabriel - visualização de dados
+	- nayane e daniel - análise exploratória
+	- storytelling - squad todo
+	
+
+análise exploratória
+4 perguntas + 1 extra - Daniel
+3 perguntas + 2 extras - Nayane
