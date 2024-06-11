@@ -19,6 +19,3 @@ O objetivo deste repositório é servir como um registro de aprendizado e práti
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Contato
-Para mais informações, entre em contato através do e-mail: [nayanesenhorinha@gmail.com](mailto:nayanesenhorinha@gmail.com).
